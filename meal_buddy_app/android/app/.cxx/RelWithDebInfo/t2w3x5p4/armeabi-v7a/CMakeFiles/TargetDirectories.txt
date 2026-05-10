@@ -1,0 +1,2 @@
+/Users/pcfriend/Desktop/freePro/학습/밥친구/meal_buddy_app/android/app/.cxx/RelWithDebInfo/t2w3x5p4/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/pcfriend/Desktop/freePro/학습/밥친구/meal_buddy_app/android/app/.cxx/RelWithDebInfo/t2w3x5p4/armeabi-v7a/CMakeFiles/edit_cache.dir

@@ -1,0 +1,266 @@
+# Dependencies
+node_modules/
+.pub-cache/
+.pub/
+
+# Build outputs
+build/
+dist/
+*.apk
+*.aab
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.lock
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Generated files
+*.g.dart
+*.freezed.dart
+
+# Test files
+test-results/
+coverage/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mkv
+*.m4v
+*.3gp
+*.ogv
+*.ts
+*.mts
+*.m2ts
+*.vob
+*.ogm
+*.ogx
+*.mxf
+*.wma
+*.aac
+*.flac
+*.alac
+*.ape
+*.wav
+*.mp3
+*.ogg
+*.m4a
+*.wma
+*.aiff
+*.au
+*.ra
+*.ram
+*.ac3
+*.dts
+*.dtshd
+*.dtsma
+*.eac3
+*.ec3
+*.mlp
+*.pcm
+*.w64
+*.wavpack
+*.wv
+*.tta
+*.tak
+*.ofr
+*.ofs
+*.shn
+*.ape
+*.flac
+*.wav
+*.aiff
+*.au
+*.cda
+*.wma
+*.m4a
+*.m4b
+*.m4p
+*.m4r
+*.m4v
+*.3g2
+*.3gp
+*.3gp2
+*.3gpp
+*.amv
+*.asf
+*.avi
+*.bik
+*.bin
+*.divx
+*.drc
+*.dv
+*.dvd
+*.f4v
+*.flv
+*.gvi
+*.gxf
+*.iso
+*.m1v
+*.m2v
+*.m2t
+*.m2ts
+*.m4v
+*.mkv
+*.mov
+*.mp2
+*.mp2v
+*.mp4
+*.mp4v
+*.mpe
+*.mpeg
+*.mpeg1
+*.mpeg2
+*.mpeg4
+*.mpg
+*.mpv2
+*.mts
+*.mtv
+*.mxf
+*.mxg
+*.nsv
+*.nuv
+*.ogg
+*.ogm
+*.ogv
+*.ogx
+*.ps
+*.rec
+*.rm
+*.rmvb
+*.rpl
+*.thp
+*.tod
+*.ts
+*.tts
+*.txd
+*.vfw
+*.vid
+*.video
+*.vob
+*.vro
+*.webm
+*.wm
+*.wmv
+*.wmx
+*.wrap
+*.wvx
+*.xvid
+*.yuv

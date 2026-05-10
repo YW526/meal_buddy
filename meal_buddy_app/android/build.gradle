@@ -1,0 +1,122 @@
+buildscript {
+    ext.kotlin_version = '1.9.24'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    afterEvaluate { project ->
+        if (project.extensions.findByName("android") != null) {
+
+            //#. 현재 플러그인의 compileSdk 버전을 가져옴
+            Integer pluginCompileSdk = project.android.compileSdk
+
+            //#. compileSdk 버전이 null이 아니고, 34보다 낮으면 강제로 34로 변경
+            if (pluginCompileSdk != null && pluginCompileSdk < 34) {
+                //#. 그리고 compileSdk버전이 변경되었다고 경고 로그
+                project.logger.error(
+                        "Warning: Overriding compileSdk version in Flutter plugin: "
+                                + project.name
+                                + " from "
+                                + pluginCompileSdk
+                                + " to 34 (to work around https://issuetracker.google.com/issues/199180389)."
+                                + "\nIf there is not a new version of " + project.name + ", consider filing an issue against "
+                                + project.name + " to increase their compileSdk to the latest (otherwise try updating to the latest version)."
+                )
+                //#. compileSdk 버전을 34로 강제로 설정
+                project.android {
+                    compileSdk 34
+                }
+            }
+            //#. flutter_plugin_android_lifecycle 등 Android 35를 요구하는 플러그인 처리
+            if (pluginCompileSdk != null && pluginCompileSdk >= 35) {
+                project.logger.error(
+                        "Warning: Overriding compileSdk version in Flutter plugin: "
+                                + project.name
+                                + " from "
+                                + pluginCompileSdk
+                                + " to 34 (Android SDK 35/36 has known issues with android.jar)."
+                                + "\nThis is a workaround for the android.jar corruption issue."
+                )
+                project.android {
+                    compileSdk 34
+                }
+            }
+            
+            //#. compileSdk가 null인 경우에도 34로 설정
+            if (pluginCompileSdk == null) {
+                project.logger.error(
+                        "Warning: Setting compileSdk version in Flutter plugin: "
+                                + project.name
+                                + " to 34 (plugin had no compileSdk specified)."
+                )
+                project.android {
+                    compileSdk 34
+                }
+            }
+            
+            //#. flutter 속성이 없는 경우를 위한 fallback 설정
+            if (!project.hasProperty('flutter')) {
+                project.ext.flutter = [
+                    versionCode: 1,
+                    versionName: '1.0.0',
+                    ndkVersion: '25.1.8937393'
+                ]
+            }
+            
+            //#. android 확장에 flutter 속성이 없는 경우를 위한 추가 설정
+            if (project.extensions.findByName("android") != null) {
+                project.android {
+                    if (!project.android.hasProperty('flutter')) {
+                        project.android.ext.flutter = [
+                            versionCode: 1,
+                            versionName: '1.0.0',
+                            ndkVersion: '25.1.8937393'
+                        ]
+                    }
+                }
+            }
+            
+            //#. geolocator_android 플러그인 특별 처리
+            if (project.name == 'geolocator_android') {
+                project.android {
+                    compileSdk 34
+                    defaultConfig {
+                        minSdk 23
+                        targetSdk 35
+                    }
+                }
+                
+                //#. flutter 속성을 직접 설정
+                project.ext.flutter = [
+                    versionCode: 1,
+                    versionName: '1.0.0',
+                    ndkVersion: '25.1.8937393'
+                ]
+            }
+        }
+    }
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

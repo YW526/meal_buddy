@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/pcfriend/fvm/versions/3.29.3/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/pcfriend/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/pcfriend/Desktop/freePro/학습/밥친구/meal_buddy_app/android/app/.cxx/RelWithDebInfo/t2w3x5p4/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/pcfriend/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/pcfriend/Desktop/freePro/학습/밥친구/meal_buddy_app/android/app/.cxx/RelWithDebInfo/t2w3x5p4/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {},
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/pcfriend/Library/Android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/pcfriend/Library/Android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}
